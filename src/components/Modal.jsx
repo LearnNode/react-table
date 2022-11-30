@@ -5,7 +5,7 @@ const Modal = ({ open, close }) => {
   return (
     <div className='modal--overlay'>
       <div onClick={close}>X</div>
-      <div>Modal</div>
+      <div className='modal--container'>Modal</div>
     </div>
   )
 }
