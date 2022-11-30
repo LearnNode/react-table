@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useTable, useFilters, useGlobalFilter, usePagination } from 'react-table';
 import mockData from '../../MOCK_DATA.json';
-import { columnsData, groupedColumns } from './columns';
+import { columnsData } from './columns';
 import './table.css';
 
 const BasicTable = () => {
@@ -30,11 +30,7 @@ const BasicTable = () => {
     data
   }, useFilters, useGlobalFilter, usePagination);
 
-  // const firstTenRows = rows.slice(0, 20);
-
   const { globalFilter, pageSize, pageIndex } = state;
-
-  console.log(pageSize)
 
   return (
     <>
@@ -69,7 +65,7 @@ const BasicTable = () => {
           {page.map((row) => {
             prepareRow(row)
             return (
-              <tr {...row.getRowProps()}>
+              <tr {...row.getRowProps()} onClick={() => console.log(row)}>
                 {row.cells.map(cell => (
                   <td {...cell.getCellProps}>
                     {cell.render('Cell')}
