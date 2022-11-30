@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
+import mockData from '../../../MOCK_DATA.json';
 
 const initialState = {
-  users: [],
+  users: mockData,
   selectedUser: {}
 }
 

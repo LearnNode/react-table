@@ -4,11 +4,13 @@ import mockData from '../../MOCK_DATA.json';
 import { columnsData } from './columns';
 import Modal from './Modal';
 import './table.css';
+import { useSelector } from 'react-redux';
 
 const BasicTable = () => {
+  const { users } = useSelector(state => state.users);
   const [isOpen, setIsOpen] = useState(false);
   const columns = useMemo(() => columnsData, []);
-  const data = useMemo(() => mockData, []);
+  const data = useMemo(() => users, []);
   const { 
     getTableProps, 
     getTableBodyProps, 
