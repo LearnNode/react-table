@@ -42,3 +42,14 @@ table th  {
   gap: 10px;
   font-size: 14px;
 }
+
+.footer button {
+  cursor: pointer;
+}
+
+.footer input {
+  padding: 5px 10px;
+  border: 1px solid blue;
+  border-radius: 5px;
+  outline: none;
+}
