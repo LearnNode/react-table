@@ -4,10 +4,12 @@ import mockData from '../../MOCK_DATA.json';
 import { columnsData } from './columns';
 import Modal from './Modal';
 import './table.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUser } from '../features/users/userSlice';
 
 const BasicTable = () => {
-  const { users } = useSelector(state => state.users);
+  const { users, selectedUser } = useSelector(state => state.users);
+  const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   const columns = useMemo(() => columnsData, []);
   const data = useMemo(() => users, []);
@@ -35,6 +37,11 @@ const BasicTable = () => {
   }, useFilters, useGlobalFilter, usePagination);
 
   const { globalFilter, pageSize, pageIndex } = state;
+
+  const handleSelectUser = (data) => {
+    setIsOpen(true);
+    dispatch(selectUser(data))
+  }
 
   return (
     <>
