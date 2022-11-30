@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useTable, useFilters, useGlobalFilter, usePagination } from 'react-table';
 import mockData from '../../MOCK_DATA.json';
 import { columnsData } from './columns';
@@ -9,11 +9,13 @@ import { selectUser } from '../features/users/userSlice';
 
 const BasicTable = () => {
   const { users, selectedUser } = useSelector(state => state.users);
-  console.log(selectedUser);
+
   const dispatch = useDispatch();
+
   const [isOpen, setIsOpen] = useState(false);
   const columns = useMemo(() => columnsData, []);
-  const data = useMemo(() => users, []);
+  const data = useMemo(() => users, [users]);
+
   const { 
     getTableProps, 
     getTableBodyProps, 
@@ -43,7 +45,9 @@ const BasicTable = () => {
     console.log(data);
     setIsOpen(true);
     dispatch(selectUser(data))
-  }
+  };
+
+  console.log('user..', users)
 
   return (
     <>
@@ -75,7 +79,7 @@ const BasicTable = () => {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {page.map((row) => {
+          {page?.map((row) => {
             prepareRow(row)
             return (
               <tr {...row.getRowProps()} onClick={() => handleSelectUser(row.original)}>

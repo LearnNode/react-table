@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { updateUsers } from '../features/users/userSlice';
+import { updatedUsers } from '../features/users/userSlice';
 
 const Modal = ({ open, close, selectedUser }) => {
   const { users } = useSelector((state) => state.users);
-  console.log(users);
   let id, age, email;
   if (selectedUser) {
     id = selectedUser.id;
@@ -40,11 +39,9 @@ const Modal = ({ open, close, selectedUser }) => {
   }, [ selectedUser, setUser ]); 
 
   const handleUpdateUser = (data) => {
-    dispatch(updateUsers(data));
+    dispatch(updatedUsers({ id, values: data }));
     close();
   }
-
-  console.log({ id, email, age, ...user });
   
   if (!open) return null;
   return (
