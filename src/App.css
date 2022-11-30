@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  height: 100vh;
+  padding: 40px 20px;
+  overflow: auto;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search input {
+  padding: 10px 15px;
+  width: 40%;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  border: 1px solid blue;
+  border-radius: 5px;
+  background-color: transparent;
+  content: 'hello';
+}
+
+table th  {
+  background-color: blue;
+  color: rgb(255, 254, 254);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+  margin-top: 20px;
+}
