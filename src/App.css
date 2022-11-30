@@ -128,7 +128,12 @@ table th  {
 
 .modal--body__item {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.modal--body__item label {
+  color: gray;
 }
 
 .modal--body__item input {

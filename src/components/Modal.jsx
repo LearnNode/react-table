@@ -12,6 +12,7 @@ const Modal = ({ open, close }) => {
         <div className='modal--body'>
           <div className='modal--body__box'>
             <div className="modal--body__item">
+              <label>First Name:</label>
               <input type={"text"} />
             </div>
             <div className="modal--body__item">
