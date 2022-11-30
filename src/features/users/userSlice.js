@@ -3,7 +3,7 @@ import mockData from '../../../MOCK_DATA.json';
 
 const initialState = {
   users: mockData,
-  selectedUser: {}
+  selectedUser: null
 }
 
 const userSlice = createSlice({
@@ -12,10 +12,13 @@ const userSlice = createSlice({
   reducers: {
     selectUser: (state, action) => {
       state.selectedUser = action.payload;
+    },
+    updateUsers: (state, action) => {
+      state.users.map((user) => user.id === action.payload.id ? action.payload : user);
     }
   },
 });
 
-export const { selectUser } = userSlice.actions;
+export const { selectUser, updateUsers } = userSlice.actions;
 
 export default userSlice.reducer;

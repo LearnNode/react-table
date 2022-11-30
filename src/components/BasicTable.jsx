@@ -88,7 +88,7 @@ const BasicTable = () => {
             )
           })}
         </tbody>
-        <Modal open={isOpen} close={() => setIsOpen(false)} />
+        <Modal open={isOpen} close={() => setIsOpen(false)} selectedUser={selectedUser} />
       </table>
       <div className='footer'>
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>
