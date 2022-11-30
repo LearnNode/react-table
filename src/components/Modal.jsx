@@ -1,9 +1,12 @@
 import React from 'react'
 
-const Modal = () => {
+const Modal = ({ open, close }) => {
   if (!open) return null;
   return (
-    <div>Modal</div>
+    <div className='modal--overlay'>
+      <div onClick={close}>X</div>
+      <div>Modal</div>
+    </div>
   )
 }
 

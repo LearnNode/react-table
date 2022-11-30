@@ -12,6 +12,10 @@ td, th {
   padding: 8px;
 }
 
+tbody tr {
+  cursor: pointer;
+}
+
 tr:nth-child(even) {
   background-color: #dddddd;
 }

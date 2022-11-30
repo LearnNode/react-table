@@ -1,10 +1,12 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useTable, useFilters, useGlobalFilter, usePagination } from 'react-table';
 import mockData from '../../MOCK_DATA.json';
 import { columnsData } from './columns';
+import Modal from './Modal';
 import './table.css';
 
 const BasicTable = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const columns = useMemo(() => columnsData, []);
   const data = useMemo(() => mockData, []);
   const { 
@@ -65,7 +67,7 @@ const BasicTable = () => {
           {page.map((row) => {
             prepareRow(row)
             return (
-              <tr {...row.getRowProps()} onClick={() => console.log(row)}>
+              <tr {...row.getRowProps()} onClick={() => setIsOpen(true)}>
                 {row.cells.map(cell => (
                   <td {...cell.getCellProps}>
                     {cell.render('Cell')}
@@ -75,6 +77,7 @@ const BasicTable = () => {
             )
           })}
         </tbody>
+        <Modal open={isOpen} close={() => setIsOpen(false)} />
       </table>
       <div className='footer'>
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>
