@@ -88,5 +88,14 @@ table th  {
 .modal--container {
   width: 60%;
   height: 60%;
-  background-color: white
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.modal--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10%;
 }

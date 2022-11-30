@@ -4,8 +4,12 @@ const Modal = ({ open, close }) => {
   if (!open) return null;
   return (
     <div className='modal--overlay'>
-      <div onClick={close}>X</div>
-      <div className='modal--container'>Modal</div>
+      <div className='modal--container'>
+        <div className='modal--header'>
+          <h2>Update Data</h2>
+          <div onClick={close} className='close--btn'>X</div>
+        </div>
+      </div>
     </div>
   )
 }
