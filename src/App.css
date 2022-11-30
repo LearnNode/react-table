@@ -34,6 +34,15 @@ table th  {
   color: rgb(255, 254, 254);
 }
 
+.table--select {
+  padding: 10px;
+  border: 1px solid blue;
+  border-radius: 5px;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .footer {
   display: flex;
   justify-content: center;

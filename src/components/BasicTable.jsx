@@ -45,7 +45,7 @@ const BasicTable = () => {
         onChange={(e) => setGlobalFilter(e.target.value)} 
         placeholder='Search Results...'
       />
-    <select value={pageSize} onChange={(e) => setPageSize(Number(e.target.value))}>
+    <select value={pageSize} onChange={(e) => setPageSize(Number(e.target.value))} className='table--select'>
       {
         [10, 25, 50].map((page) => (
           <option key={page} value={page}>Show {page}</option>
