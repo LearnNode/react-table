@@ -10,7 +10,26 @@ const Modal = ({ open, close }) => {
           <div onClick={close} className='close--btn'>X</div>
         </div>
         <div className='modal--body'>
-          Body
+          <div className='modal--body__box'>
+            <div className="modal--body__item">
+              <input type={"text"} />
+            </div>
+            <div className="modal--body__item">
+              <input type={"text"} />
+            </div>
+            <div className="modal--body__item">
+              <input type={"text"} />
+            </div>
+            <div className="modal--body__item">
+              <input type={"text"} />
+            </div>
+            <div className="modal--body__item">
+              <input type={"text"} />
+            </div>
+          </div>
+          <div className='update--btn'>
+            Update
+          </div>
         </div>
       </div>
     </div>

@@ -86,8 +86,11 @@ table th  {
 }
 
 .modal--container {
-  width: 60%;
-  height: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+  height: 50%;
   background-color: white;
   border-radius: 5px;
   padding: 10px;
@@ -113,5 +116,23 @@ table th  {
 }
 
 .modal--body {
-  
+  background-color: green;
+  flex: 1;
+}
+
+.modal--body__box {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: greenyellow;
+  height: 80%;
+}
+
+.modal--body__item {
+  display: flex;
+  align-items: center;
+}
+
+.modal--body__item input {
+  width: 100%;
 }
