@@ -88,6 +88,7 @@ const BasicTable = () => {
         </span>
         <button onClick={() => nextPage()} disabled={!canNextPage}>Next</button>
         <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>{'>>'}</button>
+        {"||"}
         <span>Go to page: {' '}
           <input type="Number" defaultValue={pageIndex + 1}  
             onChange={(e) => {
