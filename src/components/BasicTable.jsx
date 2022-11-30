@@ -9,6 +9,7 @@ import { selectUser } from '../features/users/userSlice';
 
 const BasicTable = () => {
   const { users, selectedUser } = useSelector(state => state.users);
+  console.log(selectedUser);
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   const columns = useMemo(() => columnsData, []);
@@ -39,6 +40,7 @@ const BasicTable = () => {
   const { globalFilter, pageSize, pageIndex } = state;
 
   const handleSelectUser = (data) => {
+    console.log(data);
     setIsOpen(true);
     dispatch(selectUser(data))
   }
@@ -76,7 +78,7 @@ const BasicTable = () => {
           {page.map((row) => {
             prepareRow(row)
             return (
-              <tr {...row.getRowProps()} onClick={() => setIsOpen(true)}>
+              <tr {...row.getRowProps()} onClick={() => handleSelectUser(row.original)}>
                 {row.cells.map(cell => (
                   <td {...cell.getCellProps}>
                     {cell.render('Cell')}

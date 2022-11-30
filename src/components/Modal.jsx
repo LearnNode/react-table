@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 
 const Modal = ({ open, close }) => {
+  const { selectedUser } = useSelector(state => state.users);
+  const [user, setUser] = useState({
+
+  })
   if (!open) return null;
   return (
     <div className='modal--overlay' onClick={close}>
