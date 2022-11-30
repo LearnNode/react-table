@@ -1,7 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateUsers } from '../features/users/userSlice';
 
 const Modal = ({ open, close, selectedUser }) => {
+  const { users } = useSelector((state) => state.users);
+  console.log(users);
+  let id, age, email;
+  if (selectedUser) {
+    id = selectedUser.id;
+    age = selectedUser.age;
+    email = selectedUser.email;
+  }
+  const dispatch = useDispatch();
   const [user, setUser] = useState({
     first_name: '',
     last_name: '',
@@ -19,7 +29,6 @@ const Modal = ({ open, close, selectedUser }) => {
   
   useEffect(() => {
     if (selectedUser !== null) {
-      console.log(selectedUser)
       setUser({
         first_name: selectedUser.first_name,
         last_name: selectedUser.last_name,
@@ -29,6 +38,13 @@ const Modal = ({ open, close, selectedUser }) => {
       })
     }
   }, [ selectedUser, setUser ]); 
+
+  const handleUpdateUser = (data) => {
+    dispatch(updateUsers(data));
+    close();
+  }
+
+  console.log({ id, email, age, ...user });
   
   if (!open) return null;
   return (
@@ -62,7 +78,7 @@ const Modal = ({ open, close, selectedUser }) => {
             </div>
           </div>
           <div className='update--btn__container'>
-            <div className='update--btn' onClick={() => console.log(user)}>
+            <div className='update--btn' onClick={() => handleUpdateUser({ id, email, age, ...user })}>
               Update
             </div>
           </div>
