@@ -9,6 +9,9 @@ const Modal = ({ open, close }) => {
           <h2>Update Data</h2>
           <div onClick={close} className='close--btn'>X</div>
         </div>
+        <div className='modal--body'>
+          Body
+        </div>
       </div>
     </div>
   )
