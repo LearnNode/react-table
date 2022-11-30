@@ -27,8 +27,10 @@ const Modal = ({ open, close }) => {
               <input type={"text"} />
             </div>
           </div>
-          <div className='update--btn'>
-            Update
+          <div className='update--btn__container'>
+            <div className='update--btn'>
+              Update
+            </div>
           </div>
         </div>
       </div>

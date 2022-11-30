@@ -116,7 +116,6 @@ table th  {
 }
 
 .modal--body {
-  background-color: green;
   flex: 1;
 }
 
@@ -124,7 +123,6 @@ table th  {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(2, 1fr);
-  background-color: greenyellow;
   height: 80%;
 }
 
@@ -135,4 +133,28 @@ table th  {
 
 .modal--body__item input {
   width: 100%;
+  padding: 10px;
+  border: 1px solid blue;
+  border-radius: 5px;
+  outline: none;
+}
+
+.update--btn__container {
+  display: flex;
+  height: 20%;
+  align-items: center;
+  justify-content: center;
+}
+
+.update--btn {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: blue;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
 }
