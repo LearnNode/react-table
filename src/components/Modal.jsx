@@ -16,15 +16,19 @@ const Modal = ({ open, close }) => {
               <input type={"text"} />
             </div>
             <div className="modal--body__item">
+              <label>Last Name:</label>
               <input type={"text"} />
             </div>
             <div className="modal--body__item">
+              <label>Date of Birth:</label>
+              <input type={"date"} />
+            </div>
+            <div className="modal--body__item">
+              <label>Country:</label>
               <input type={"text"} />
             </div>
             <div className="modal--body__item">
-              <input type={"text"} />
-            </div>
-            <div className="modal--body__item">
+              <label>Phone:</label>
               <input type={"text"} />
             </div>
           </div>
